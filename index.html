@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Rainbow Godzilla</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #121212; /* Dark background for contrast */
+      flex-direction: column;
+    }
+
+    .text-container, .godzilla-container {
+      position: relative;
+      text-align: center;
+    }
+
+    #godzilla-text {
+      font-size: 6em;
+      font-family: 'Arial Black', sans-serif;
+      letter-spacing: 0.1em;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      display: inline-block;
+      color: #00ff00; /* Initial green color */
+      text-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.6);
+      transform-style: preserve-3d;
+      animation: bounce 2s ease infinite, colorChange 6s linear infinite, rotate 10s linear infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-30px);
+      }
+      60% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes colorChange {
+      0% { color: #00ff00; text-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.6); } /* Green */
+      25% { color: #ff0000; text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6); } /* Red */
+      50% { color: #0000ff; text-shadow: 0 0 20px rgba(0, 0, 255, 0.8), 0 0 30px rgba(0, 0, 255, 0.6); } /* Blue */
+      75% { color: #ff00ff; text-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.6); } /* Magenta */
+      100% { color: #00ff00; text-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.6); } /* Green */
+    }
+
+    @keyframes rotate {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+
+    .godzilla-container {
+      margin-top: 50px;
+      width: 300px;
+      height: auto;
+    }
+
+    .godzilla-container svg {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 10px #00ff00);
+      animation: neonGlow 6s infinite alternate, rainbowGlow 10s infinite linear;
+    }
+
+    @keyframes neonGlow {
+      0%, 100% { filter: drop-shadow(0 0 10px #00ff00); } /* Green Glow */
+      50% { filter: drop-shadow(0 0 20px #00ff00); } /* Brighter Glow */
+    }
+
+    @keyframes rainbowGlow {
+      0% { filter: drop-shadow(0 0 10px red); }
+      20% { filter: drop-shadow(0 0 10px orange); }
+      40% { filter: drop-shadow(0 0 10px yellow); }
+      60% { filter: drop-shadow(0 0 10px green); }
+      80% { filter: drop-shadow(0 0 10px blue); }
+      100% { filter: drop-shadow(0 0 10px purple); }
+    }
+  </style>
+</head>
+<body>
+  <div class="text-container">
+    <h1 id="godzilla-text">godzilla</h1>
+  </div>
+
+  <div class="godzilla-container">
+    <!-- Simplified SVG of Godzilla silhouette -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+      <path fill="#00ff00" d="M32 2C14.3 2 0 14.3 0 32s14.3 30 32 30 30-14.3 30-30S49.7 2 32 2zM23 50h-5v-4h5v4zm2-4v4h5v-4h-5zm12-11c0 1.7-.8 3.4-2.2 4.6-.8.7-1.7 1.2-2.7 1.6V48h-4v-7.9c-2.1-.5-4.1-1.7-5.6-3.6-1.5-1.8-2.2-3.9-2.2-6.1s.7-4.3 2.2-6.1c1.5-1.8 3.5-3 5.6-3.6V16h4v7.9c1 .4 1.9 1 2.7 1.6 1.4 1.2 2.2 2.9 2.2 4.6z"/>
+    </svg>
+  </div>
+</body>
+</html>
